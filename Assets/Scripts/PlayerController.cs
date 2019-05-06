@@ -26,9 +26,10 @@ public class PlayerController : MonoBehaviour {
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
 
+        Vector2 normalizedInput = new Vector2(horizontal, vertical).normalized;
         Vector2 position = _rb.position;
-        position.x = position.x + _stats.MoveSpeed * horizontal * Time.deltaTime;
-        position.y = position.y + _stats.MoveSpeed * vertical * Time.deltaTime;
+        position.x = position.x + _stats.MoveSpeed * normalizedInput.x * Time.deltaTime;
+        position.y = position.y + _stats.MoveSpeed * normalizedInput.y * Time.deltaTime;
 
         _rb.MovePosition(position);
     }

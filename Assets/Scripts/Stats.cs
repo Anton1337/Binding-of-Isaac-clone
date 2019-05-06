@@ -24,7 +24,7 @@ public class Stats {
     private int _maxHealth;
 
     public Stats() {
-        _moveSpeed = 5;
+        _moveSpeed = 12;
         _damage = 1;
         _shotSpeed = 1;
         _maxHealth = 5;
